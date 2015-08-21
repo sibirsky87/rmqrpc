@@ -15,7 +15,7 @@
         "videlalvaro/php-amqplib": "2.5.*"
     },
     "autoload": {
-        "psr-0": {
+        "psr-4": {
             "Sibirsky87\\Rmqrpc\\": "src"
         }
     }

@@ -51,7 +51,7 @@ abstract class AbstractRpcModel
     public function getCallback()
     {
         return function($req) {
-            $response = static::$callback->getResult(json_decode($req->body, TRUE));
+            $response = static::$callback->getResult($req->body);
 
             $msg = new AMQPMessage(
                     (string) $response, array('correlation_id' => $req->get('correlation_id'))
