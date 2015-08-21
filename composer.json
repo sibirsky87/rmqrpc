@@ -1,7 +1,7 @@
 {
     "name": "sibirsky87/rmqrpc",
     "description": "RabbitMQ RPC module",
-    "version": "1.0.0",
+    "version": "1.0.0-alpha",
     "license": "BSD-3-Clause",
     "type": "library",
     "keywords": ["rabbitmq", "apqp"],
@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-0": {
-            "Sibirsky87\\Rmqrpc\\": ""
+            "Sibirsky87\\Rmqrpc\\": "src"
         }
     }
 }
