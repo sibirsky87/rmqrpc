@@ -1,8 +1,8 @@
 {
     "name": "sibirsky87/rmqrpc",
-    "description": "RabbirMQ RPC module",
+    "description": "RabbitMQ RPC module",
     "version": "1.0.0",
-    "license": "LGPL-2.1",
+    "license": "BSD-3-Clause",
     "type": "library",
     "keywords": ["rabbitmq", "apqp"],
     "authors": [
