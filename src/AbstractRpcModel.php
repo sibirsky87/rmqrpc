@@ -50,14 +50,16 @@ abstract class AbstractRpcModel
 
     public function getCallback()
     {
-        return function($req) {
+        $queue = $this->queue;
+
+        return function($req) use ($queue) {
             $response = static::$callback->getResult($req->body);
 
             $msg = new AMQPMessage(
                     (string) $response, array('correlation_id' => $req->get('correlation_id'))
             );
 
-            $req->delivery_info['channel']->basic_publish($msg, '', $req->get('reply_to'));
+            $req->delivery_info['channel']->basic_publish($msg, '', $queue . "_replay");
             $req->delivery_info['channel']->basic_ack($req->delivery_info['delivery_tag']);
 
             $this->consumed++;
